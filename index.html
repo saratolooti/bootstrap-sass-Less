@@ -32,10 +32,15 @@
                     <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModel">
+                    <a data-toggle="modal" id="loginModalBtn">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
+                <!-- <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModel" >
+                        <span class="fa fa-sign-in"></span> Login
+                    </a>
+                </span> -->
             </div>
         </div>
     </nav>
@@ -46,7 +51,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button class="close" type="button" data-dismiss="modal">
+                    <button class="close" type="button" id="modalCloseBtnR">
                         &times;
                     </button>
                 </div>
@@ -128,7 +133,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button class="close" type="button" data-dismiss="modal">
+                    <button class="close" type="button" id="modalCloseBtn">
                         &times;
                     </button>
                 </div>
@@ -175,8 +180,11 @@
                 </div>
                 <div class="col-12 col-sm align-self-center">
                     <a class="btn btn-warning btn-sm btn-block" role="button"
-                    data-toggle="modal" data-target="#reserveModal">Reserve Table
+                        id="reserveModalBtn">Reserve Table
                     </a>
+                    <!-- <a class="btn btn-warning btn-sm btn-block" role="button"
+                    data-toggle="modal" data-target="#reserveModal">Reserve Table
+                    </a> -->
                 </div>
             </div>
         </div>
@@ -364,7 +372,26 @@
                     $('#carouselButten').children('span').addClass('fa-pause');
                 }
             });
+
+            //login modal
+            $('#loginModalBtn').click(() => {
+                $('#loginModel').modal('toggle');
+            });
+            $('#modalCloseBtn').click(() => {
+                $('#loginModel').modal('hide');
+            });
+
+            //reserve modal
+            $('#reserveModalBtn').click(() => {
+                $('#reserveModal').modal('toggle');
+            });
+            $('#modalCloseBtnR').click(() => {
+                $('#reserveModal').modal('hide');
+            });
+
+
         });
+        
     </script>
 
 </body>
